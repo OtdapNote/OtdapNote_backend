@@ -1,3 +1,19 @@
 spring:
   application:
     name: otdapnote
+
+  # 저장소 루트의 .env 를 설정으로 읽는다. 없으면(운영·CI) 무시하고 OS 환경변수를 쓴다.
+  config:
+    import: optional:file:.env[.properties]
+
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    hibernate:
+      # 스키마는 Hibernate 가 만들지 않는다. 마이그레이션 도구 결정 후 validate 로 변경 (§12 #22)
+      ddl-auto: none
+    # DB 조회는 서비스 계층(트랜잭션 안)에서만 한다
+    open-in-view: false
