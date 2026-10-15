@@ -40,4 +40,7 @@ out/
 CLAUDE.md
 /docs/claude
 
+### mac OS ###
+.DS_Store
+
 .env
