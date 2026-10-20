@@ -16,7 +16,8 @@ Spring Boot 4.1 · Java 25 · PostgreSQL 17
    ```
 
 2. `.env`의 빈 값(`DB_NAME`, `DB_USERNAME`, `DB_PASSWORD`)을 채운다.
-   값은 팀 비밀 공유 경로에서 받는다. **`.env`는 커밋하지 않는다.**
+   로컬 DB는 내 컴퓨터의 Docker에만 만들어지므로 값은 각자 정해도 된다(예: `otdapnote`).
+   **`.env`는 커밋하지 않는다.**
 
 ## 실행
 
